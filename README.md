@@ -14,7 +14,7 @@ Simple json database manager, fast & easy.
 
 ### Github
 
-1. Download the [latest release.](https://github.com/ksplatdev/Hevic)
+1. Download the [latest release.](https://github.com/ksplatdev/Hevic/releases/latest)
 2. Require hevic.
 3. Create a new hevic.db class instance.
 4. Done, read the docs.
