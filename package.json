@@ -1,0 +1,36 @@
+{
+	"name": "hevic",
+	"version": "1.0.0",
+	"description": "Simple json database manager, fast & easy.",
+	"main": "dist/index.js",
+	"scripts": {
+		"test": "node test/index.js",
+		"build": "sh scripts/build.sh"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ksplatdev/Hevic.git"
+	},
+	"keywords": [
+		"json",
+		"database",
+		"fast",
+		"easy",
+		"simple",
+		"small",
+		"db"
+	],
+	"author": "Bleart Emini",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ksplatdev/Hevic/issues"
+	},
+	"homepage": "https://github.com/ksplatdev/Hevic#readme",
+	"devDependencies": {
+		"@types/node": "^15.6.1",
+		"typescript": "^4.3.2"
+	},
+	"dependencies": {
+		"json-format": "^1.0.1"
+	}
+}
