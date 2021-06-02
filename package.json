@@ -1,6 +1,6 @@
 {
 	"name": "hevic",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Simple json database manager, fast & easy.",
 	"main": "dist/index.js",
 	"scripts": {

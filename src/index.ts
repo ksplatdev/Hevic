@@ -4,6 +4,7 @@ type ValidJson = any[] | LooseObject;
 
 interface dbOptions {
 	debug?: boolean;
+	indentSpaces?: number;
 }
 
 interface LooseObject {
@@ -13,16 +14,18 @@ interface LooseObject {
 class db {
 	readonly path: string;
 	private readonly options: dbOptions;
+	private indentSpaces: number;
 
 	/**
 	 * @description Create a JSON db manager
 	 * @param {string} path Path to json file
-	 * @param {dbOptions} [options={debug: false}] Misc options
+	 * @param {dbOptions} [options={debug: false, indentSpaces: 4}] Misc options
 	 */
 
 	constructor(path: string, options?: dbOptions) {
 		this.path = path;
-		this.options = options || { debug: false };
+		this.options = options || { debug: false, indentSpaces: 4 };
+		this.indentSpaces = this.options.indentSpaces || 4;
 	}
 
 	/**
@@ -33,7 +36,7 @@ class db {
 	 */
 
 	public async overwrite(value?: ValidJson) {
-		let a = JSON.stringify(value);
+		let a = JSON.stringify(value, null, this.indentSpaces);
 		return a
 			? fs.writeFile(
 					this.path,
@@ -64,7 +67,7 @@ class db {
 	 */
 
 	public async update(newData: ValidJson) {
-		let a = JSON.stringify(newData);
+		let a = JSON.stringify(newData, null, this.indentSpaces);
 		return fs.writeFile(
 			this.path,
 			a,
@@ -82,8 +85,8 @@ class db {
 	}
 }
 
-let hevc = {
+let hevic = {
 	db: db,
 };
 
-export default hevc;
+export default hevic;
